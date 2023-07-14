@@ -79,7 +79,6 @@ public abstract class PlayerController :MonoBehaviour
         OnceJumpRayCheck = true;
         isGrounded = false;
 
-
         currentJumpCount++;
 
     }
@@ -158,7 +157,8 @@ public abstract class PlayerController :MonoBehaviour
                 else
                 {
 
-                    Debug.Log("안부딪힘");
+                    //in the air
+                    Debug.Log("in the air");
 
                 }
 

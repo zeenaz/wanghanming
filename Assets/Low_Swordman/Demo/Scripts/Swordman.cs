@@ -83,7 +83,7 @@ public class Swordman : PlayerController
 
         if (!m_Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.E))
             {
 
 
@@ -108,7 +108,7 @@ public class Swordman : PlayerController
         }
 
 
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.R))
         {
             m_Anim.Play("Die");
 
