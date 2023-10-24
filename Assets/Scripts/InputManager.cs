@@ -5,13 +5,15 @@ public class InputManager : MonoBehaviour
 {
     public UnityEvent onShoot = new UnityEvent();
     public UnityEvent onReload = new UnityEvent();
-    public UnityEvent onDead = new UnityEvent();
+    public UnityEvent onDie = new UnityEvent();
+    
     private void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             onShoot.Invoke();
         }
+        
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -20,13 +22,14 @@ public class InputManager : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
-        }
-        if (Input.GetKey(KeyCode.P))
-        {
-            onDead.Invoke();
-
+            //Application.Quit();
+            //open menu
         }
         
+        //Press P to kill player
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            onDie.Invoke();
+        }
     }
 }
