@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -21,12 +22,22 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
     }
+    
+    public void RecoverHealth(int health)
+    {
+        currentHealth += health;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
 
     private void Die()
     {
         // Handle player death here
         Debug.Log("Player is dead!");
-        // You can disable the player, show a game over screen, etc.
+        //Reaload the scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     // Call this method when an explosion occurs
@@ -35,6 +46,7 @@ public class PlayerHealth : MonoBehaviour
         if (!isTakingDamage)
         {
             StartCoroutine(ApplyDamageOverTime(1));
+            Debug.Log("Player is taking damage!");
         }
     }
 

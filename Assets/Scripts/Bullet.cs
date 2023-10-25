@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
         }
         Instantiate(impactEffect, transform.position, transform.rotation);
         //Destroy(gameObject);
-        Debug.Log("Bullet collided with " + collision.gameObject.name + "!");
+        //Debug.Log("Bullet collided with " + collision.gameObject.name + "!");
     }
     
     private void OnEnable()

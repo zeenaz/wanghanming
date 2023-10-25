@@ -186,5 +186,5 @@ MonoBehaviour:
   deathEffect: {fileID: 1330293240199178487, guid: c3bb6e3689e5ceb4ea0995eda99064cb, type: 3}
   hitEffect: {fileID: 8058964040196529256, guid: ca7818f54287ae0459ee536d04938da4, type: 3}
   flashTime: 0.1
-  flashFrequency: 10
+  flashFrequency: 2
   flashColor: {r: 1, g: 0, b: 0, a: 0}

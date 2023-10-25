@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class EnemyMail : MonoBehaviour
 {
-    private Collider2D collider;
     private Animator animator;
     private PlayerHealth playerHealth;
     public bool IsOnExplosion = false;
@@ -14,24 +13,28 @@ public class EnemyMail : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        collider = GetComponentInChildren<Collider2D>();
         animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        playerHealth = other.GetComponent<PlayerHealth>();
+        
         if (other.CompareTag("Player"))
         {
             animator.SetBool("IsAttack", true);
         }
+        
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (playerHealth != null && IsOnExplosion)
+        if (other.CompareTag("Player"))
         {
-            playerHealth.OnExplosion();
+            playerHealth = other.GetComponent<PlayerHealth>();
+            if (playerHealth != null && IsOnExplosion)
+            {
+                playerHealth.OnExplosion();
+            }
         }
     }
     

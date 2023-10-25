@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1064904490507014276}
   - component: {fileID: 1064904490507014277}
   - component: {fileID: 1064904490507014278}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: flat-cabinet
   m_TagString: Ground
   m_Icon: {fileID: 0}

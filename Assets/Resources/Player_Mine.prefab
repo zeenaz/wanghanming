@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 5
-  JumpForce: 100
+  JumpForce: 125
   MaxJumpCount: 2
   GroundCheck: {fileID: 5010980235452191017}
   GroundCheckDistance: 1
