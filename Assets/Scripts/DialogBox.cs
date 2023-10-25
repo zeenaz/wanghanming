@@ -7,36 +7,50 @@ public class DialogBox : MonoBehaviour
     private Animator animator;
     private PlayerHealth playerHealth;
     private Transform playerTransform;
-    public float speed = 0.1f;
+    public float speed = 1f;
+    public float lifeTime = 2f;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    
+    void Update()
     {
-        
-        if (other.CompareTag("Player"))
-        {
-            animator.SetBool("IsAttack", true);
-            MoveToPlayer();
-        }
+        MoveToPlayer();
     }
     
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            animator.SetBool("IsAttack", true);
             playerHealth = other.GetComponent<PlayerHealth>();
             playerHealth.OnExplosion();
         }
     }
     
-    private void MoveToPlayer()
+    public void MoveToPlayer()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, speed);
+        //move to player position
+        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
+    }
+    
+    //Destory itself after lifeTime
+    private void OnEnable()
+    {
+        Invoke("Destroy", lifeTime);
+    }
+    
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
+    
+    private void Destroy()
+    {
+        animator.SetBool("IsAttack", true);
     }
 }

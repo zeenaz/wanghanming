@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3677737194880834394}
   - component: {fileID: 3677737194880834392}
   - component: {fileID: 3677737194880834395}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: mid-cabinet
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3677737194880834389}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.2225885, y: -8.625921, z: 0.07016125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -34,6 +34,7 @@ public class Bullet : MonoBehaviour
         if (target != null)
         {
             target.TakeDamage();
+            
         }
         Instantiate(impactEffect, transform.position, transform.rotation);
         //Destroy(gameObject);
